@@ -11,7 +11,7 @@
 }
 
 header {
-  height: 150px;
+  height: 100px;
   background-color: #000000;
 }
 header .header-flex {
@@ -20,15 +20,15 @@ header .header-flex {
   height: 100%;
 }
 header .header-flex img {
-  width: 100px;
+  height: 70%;
 }
 
 main {
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 100px);
   background-color: #202C3C;
 }
 main .container {
-  padding: 100px 0;
+  padding-top: 80px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -41,7 +41,7 @@ main .container-albums {
   margin: 20px;
   width: 200px;
   padding: 20px;
-  background-color: #303948;
+  background-color: #000000;
   text-align: center;
   color: white;
   cursor: pointer;

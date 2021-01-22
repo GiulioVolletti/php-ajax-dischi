@@ -2,7 +2,7 @@ main {
   min-height: $mainHeight;
   background-color: $secondColor;
   .container {
-    padding: 100px 0;
+    padding-top: 80px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -14,7 +14,7 @@ main {
       margin: 20px;
       width: 200px;
       padding: 20px;
-      background-color: #303948;
+      background-color: $mainColor;
       text-align: center;
       color: white;
       cursor: pointer;
