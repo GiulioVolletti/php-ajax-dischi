@@ -10,12 +10,26 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-between;
       margin: 20px;
       width: 200px;
       padding: 20px;
       background-color: #303948;
       text-align: center;
-      background-color: white;
+      color: white;
+      cursor: pointer;
+      img {
+        width: 100%;
+      }
+      h3 {
+        margin: 10px 0;
+        text-transform: uppercase ;
+      }
+      p:first-child {
+        padding-bottom: 10px;
+        color: lightgrey;
+        font-weight: bold;
+      }
     }
   }
 }
