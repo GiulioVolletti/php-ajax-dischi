@@ -1,4 +1,12 @@
 header {
   height: $headerHeight;
   background-color: $mainColor;
+  .header-flex {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    img {
+      width: 100px;
+    }
+  }
 }
