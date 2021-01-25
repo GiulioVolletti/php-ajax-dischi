@@ -17,6 +17,7 @@ header {
 header .header-flex {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 100%;
 }
 header .header-flex img {

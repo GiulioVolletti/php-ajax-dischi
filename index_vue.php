@@ -1,6 +1,3 @@
-<?php
-  include __DIR__ . '/partial/db.php';
-?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -15,6 +12,16 @@
       ?>
       <!-- main -->
       <main>
+        <div class="container">
+          <form action="genre.php" method="get">
+            <select  name="genre">
+              <option  value="All">Tutti</option>
+              <option v-for="tipe in genres" :value="tipe">{{tipe}}</option>
+            </select>
+            <button type="submit" name="button">Cerca</button>
+
+          </form>
+        </div>
         <div class="container">
           <div v-for="(album, index) in albums" class="container-albums">
             <img :src="album.poster" alt="cover">
