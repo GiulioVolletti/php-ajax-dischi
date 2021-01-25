@@ -2,4 +2,4 @@ $mainColor: #000000;
 $secondColor: #202C3C;
 
 $headerHeight: 100px;
-$mainHeight: calc(100vh - 100px);
+$mainHeight: calc(100vh - #{$headerHeight});
