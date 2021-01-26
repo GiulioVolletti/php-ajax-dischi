@@ -8,6 +8,30 @@ var app = new Vue ({
   data: {
     albums: [],
     genres: [],
+    genre: '',
+  },
+  methods: {
+    preventDefault: function (){
+      console.log("preventDefault");
+      event.preventDefault();
+      axios
+      .get("partial/server.php",
+        {
+          params: {
+            genre: this.genre,
+          }
+        }
+      )
+      .then(
+        (element) => {
+          this.albums = element.data;
+          // console.log(element);
+          // console.log(this.albums );
+        }
+      );
+
+
+    }
   },
   mounted: function(){
     console.log("hello world");
@@ -20,7 +44,9 @@ var app = new Vue ({
 
         this.albums = element.data;
         for (var i = 0; i < this.albums.length; i++) {
-          this.genres.push(this.albums[i].genre)
+          if (!this.genres.includes(this.albums[i].genre)) {
+            this.genres.push(this.albums[i].genre)
+          }
         };
         // console.log(this.genres);
         console.log(element);
@@ -28,6 +54,7 @@ var app = new Vue ({
         // console.log(this.albums );
       }
     );
+
 
   },
 

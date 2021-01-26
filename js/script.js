@@ -1851,18 +1851,37 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: "#app-container",
   data: {
     albums: [],
-    genres: []
+    genres: [],
+    genre: ''
+  },
+  methods: {
+    preventDefault: function preventDefault() {
+      var _this = this;
+
+      console.log("preventDefault");
+      event.preventDefault();
+      axios.get("partial/server.php", {
+        params: {
+          genre: this.genre
+        }
+      }).then(function (element) {
+        _this.albums = element.data; // console.log(element);
+        // console.log(this.albums );
+      });
+    }
   },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
 
     console.log("hello world");
     axios.get("partial/server.php").then(function (element) {
       // console.log(element.data);
-      _this.albums = element.data;
+      _this2.albums = element.data;
 
-      for (var i = 0; i < _this.albums.length; i++) {
-        _this.genres.push(_this.albums[i].genre);
+      for (var i = 0; i < _this2.albums.length; i++) {
+        if (!_this2.genres.includes(_this2.albums[i].genre)) {
+          _this2.genres.push(_this2.albums[i].genre);
+        }
       }
 
       ; // console.log(this.genres);

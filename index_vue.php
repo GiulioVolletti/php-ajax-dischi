@@ -14,17 +14,17 @@
       <main>
         <div class="container">
           <form action="genre.php" method="get">
-            <select  name="genre">
-              <option  value="All">Tutti</option>
+            <select  name="genre" v-model="genre">
+              <option  value="">Tutti</option>
               <option v-for="tipe in genres" :value="tipe">{{tipe}}</option>
             </select>
-            <button type="submit" name="button">Cerca</button>
+            <button v-on:click="preventDefault()" type="submit" name="button">Cerca</button>
 
           </form>
         </div>
         <div class="container">
-          <div v-for="(album, index) in albums" class="container-albums">
-            <img :src="album.poster" alt="cover">
+          <div v-for="album in albums" class="container-albums">
+            <img :src="album.poster" :alt="album.title">
             <h3>{{album.title}}</h3>
             <div>
               <p>{{album.author}}</p>
